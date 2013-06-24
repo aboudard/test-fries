@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="./lib/css/stack.css">
   <link rel="stylesheet" href="./lib/css/sliders.css">
 
+  <link rel="stylesheet" href="./css/toast.css">
+
   <!-- For demo purposes only -->
   <style type="text/css">
 
@@ -60,7 +62,7 @@
       <ul class="actions flex" data-overflow="false">
         <li><a href="compose.html" class="action" title="Compose" data-transition="push"><i class="icon-new-message"></i></a></li>
         <li><a href="contacts.html" class="action" title="Contacts" data-transition="push"><i class="icon-group"></i></a></li>
-        <li><a href="#" class="action" title="Refresh" data-ignore="true"><i class="icon-refresh"></i></a></li>
+        <li><a id="toast" href="#" class="action" title="Refresh" data-ignore="true"><i class="icon-refresh"></i></a></li>
       </ul>
     </nav>
 
@@ -76,6 +78,19 @@
   <script src="./lib/js/action-bars.js"></script>
   <script src="./lib/js/spinners.js"></script>
   <script src="./lib/js/tabs.js"></script>
+  <script src="./js/toast.js"></script>
   <script src="phonegap.js"></script>
+
+  <script>
+    document.addEventListener('load', isReady, false);
+    function isReady(e){
+      var toastClick = document.getElementById("toast");
+      toastClick.addEventListener('click', function(e){
+        var toast = new Android_Toast();
+        toast.set_content('Please check your connection and try again.');
+        toast.show();
+      }, false);
+    }
+  </script>
 </body>
 </html>
