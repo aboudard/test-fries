@@ -12,6 +12,8 @@ function Android_Toast(){
 	this.duration = 3000;
 	this.content = '';
 	this.position = 'bottom';
+	for (var n in arguments[0]) { this[n] = arguments[0][n]; }
+	}
 }
 
 Android_Toast.prototype.set_duration = function( duration ){
