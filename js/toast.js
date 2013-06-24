@@ -12,7 +12,9 @@ function Android_Toast(){
 	this.duration = 3000;
 	this.content = '';
 	this.position = 'bottom';
-	for (var n in arguments[0]) { this[n] = arguments[0][n]; }
+	for (var n in arguments[0]) { 
+		this[n] = arguments[0][n];
+		console.log(arguments[0][n]);
 	}
 }
 
