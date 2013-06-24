@@ -82,7 +82,7 @@
   <script src="phonegap.js"></script>
 
   <script>
-    document.addEventListener('load', isReady, false);
+    window.addEventListener('load', isReady, false);
     function isReady(e){
       console.log("ready");
       var toastClick = document.getElementById("toast");
