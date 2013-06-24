@@ -82,18 +82,18 @@
   <script src="phonegap.js"></script>
 
   <script>
-    window.addEventListener('load', isReady, false);
-    function isReady(e){
-      alert('ready');
-      console.log("ready");
-      var toastClick = document.getElementById("toast");
-      toastClick.addEventListener('click', function(e){
-        console.log("click");
-        var toast = new Android_Toast();
-        toast.set_content('Please check your connection and try again.');
-        toast.show();
-      }, false);
+    window.addEventListener('load', init, false);
+    var divC = document.getElementById("content");
+    function ready(e){
+      navigator.notification.alert("Phonegap is Ready");
+      console.log("Phonegap is Ready");
+      console.warn("Warning : attention");
+      console.error("Error : erreur de code");
     }
-  </script>
+    function init(e){
+      //alert('init');
+      document.addEventListener('deviceready', ready, false);
+    }
+</script>
 </body>
 </html>
